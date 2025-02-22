@@ -2,7 +2,7 @@ import React from 'react';
 
 const HowItWorks = () => {
   return (
-    <section className="py-12 bg-linear-65 from-black to-purple-500">
+    <section className="py-12 bg-linear-65 from-black to-blue-500">
       <div className="mx-auto flex w-full max-w-7xl flex-col items-center justify-center px-5 py-16 md:px-10 md:py-20">
         <p className="font-inter mb-2 text-center text-white text-sm font-medium">
           3 EASY STEPS

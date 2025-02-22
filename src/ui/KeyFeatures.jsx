@@ -19,7 +19,7 @@ const KeyFeatures = () => {
           <ul className="grid max-w-2xl grid-cols-2 sm:gap-5 md:max-w-none">
             {[
               { title: "Fraud Detection", desc: "AI-powered fraud detection to keep you safe.", icon: "🔍" },
-              { title: "Hidden Camera Alerts", desc: "Get notified of hidden cameras around you.", icon: "📷" },
+              { title: "deepfake detection", desc: "Get notified of hidden cameras around you.", icon: "📷" },
               { title: "Screenshot Prevention", desc: "Block unauthorized screenshots and screen recording.", icon: "🚫" },
               { title: "Social Media Cleanup", desc: "Easily remove harmful online content.", icon: "🛡️" },
               { title: "Data Encryption", desc: "End-to-end encryption for your privacy.", icon: "🔒" },

@@ -3,7 +3,7 @@ import React from 'react'
 const HeroSec = () => {
   return (
     <>
-		<header className="bg-linear-65 from-black to-purple-500 ">
+		<header className="bg-linear-65 from-black to-blue-500 ">
 		  <div className="bg-gray-300 w-full h-full" style={{
         backgroundImage: "url('/img/andrew-kliatskyi-9l_R8EBQ7-c-unsplash.jpg')",
         backgroundSize: "cover",
@@ -14,7 +14,7 @@ const HeroSec = () => {
               Cybersentinels: AI-Powered Cybersecurity Protection
 		      </h1>
 		      <div className="flex items-stretch">
-		        <a href="#" className="mr-6 rounded-md bg-[#6366f1] px-8 py-4 text-center font-semibold text-white md:mr-8">
+		        <a href="#" className="mr-6 rounded-md bg-blue-500 px-8 py-4 text-center font-semibold text-white md:mr-8">
 		          Create Case
 		        </a>
 		        <a href="#" className="flex items-center justify-center rounded-md border border-solid border-black bg-white px-6 py-3 font-bold">

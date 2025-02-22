@@ -18,7 +18,7 @@ const Navbar = () => {
   return (
     <header
       className={`fixed mt-4 left-4 right-4 md:left-64 md:right-64 z-20 w-auto transition-all duration-300 ${
-        isScrolled ? "backdrop-blur-lg /80 shadow-lg" : "bg-purple-400 shadow-md"
+        isScrolled ? "backdrop-blur-lg /80 shadow-lg" : "bg-blue-400 shadow-md"
       }`}
     >
       <div className="mx-auto max-w-6xl px-6 sm:px-8">
@@ -26,7 +26,7 @@ const Navbar = () => {
           
           <div className="flex flex-1 items-center space-x-3">
             <button
-              className="block md:hidden text-black focus:outline-none"
+              className="block md:hidden text-white focus:outline-none"
               onClick={() => setIsMenuOpen(true)}
             >
               <Menu className="h-6 w-6" />
@@ -36,13 +36,13 @@ const Navbar = () => {
           </div>
 
           <nav className="hidden md:flex items-center space-x-5">
-            <a href="#home" className="text-white text-sm font-medium hover:text-[#6366f1]">
+            <a href="#home" className="text-white text-sm font-medium hover:text-black">
               Home
             </a>
-            <a href="#keyf" className="text-white text-sm font-medium hover:text-[#6366f1]">
+            <a href="#keyf" className="text-white text-sm font-medium hover:text-black">
               Features
             </a>
-            <a href="#contact" className="text-white text-sm font-medium hover:text-[#6366f1]">
+            <a href="#contact" className="text-white text-sm font-medium hover:text-black">
               Contact
             </a>
           </nav>
@@ -50,7 +50,7 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-3">
             <Link
               to="/login"
-              className="px-4 py-2 text-sm font-medium text-white bg-[#6366f1] rounded-lg hover:bg-[#4f46e5] hover:shadow-md"
+              className="px-4 py-2 text-sm font-medium text-white bg-blue-400 rounded-lg hover:bg-blue-500 hover:shadow-md"
             >
               Login
             </Link>
@@ -71,24 +71,24 @@ const Navbar = () => {
               <X className="h-6 w-6" />
             </button>
             <nav className="mt-10 flex flex-col space-y-4">
-              <a href="#home" className="text-black text-sm font-medium hover:text-[#6366f1]">
+              <a href="#home" className="text-black text-sm font-medium hover:text-black">
                 Home
               </a>
-              <a href="#prep" className="text-black text-sm font-medium hover:text-[#6366f1]">
+              <a href="#prep" className="text-black text-sm font-medium hover:text-black">
               Features
               </a>
-              <a href="#mock" className="text-black text-sm font-medium hover:text-[#6366f1]">
+              <a href="#mock" className="text-black text-sm font-medium hover:text-black">
                 Contact
               </a>
               <Link
                 to="/login"
-                className="mt-6 px-4 py-2 text-sm font-medium text-white bg-[#6366f1] rounded-lg hover:bg-[#4f46e5] hover:shadow-md"
+                className="mt-6 px-4 py-2 text-sm font-medium text-white bg-blue-500 rounded-lg hover:bg-blue-400 hover:shadow-md"
               >
                 Login
               </Link>
               <Link
                 to="/iam"
-                className="px-4 py-2 text-sm font-medium text-[#6366f1] border border-[#6366f1] rounded-lg hover:bg-[#6366f1] hover:text-white hover:shadow-md"
+                className="px-4 py-2 text-sm font-medium text-blue-500 border border-white rounded-lg hover:bg-blue-500 hover:text-white hover:shadow-md"
               >
                 Register
               </Link>

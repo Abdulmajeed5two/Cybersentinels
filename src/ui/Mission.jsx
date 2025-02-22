@@ -3,7 +3,7 @@ import React from 'react';
 const Mission = () => {
   return (
     <>
-      <section className='bg-linear-65 from-black to-purple-500 '> 
+      <section className='bg-linear-65 from-black to-blue-500 '> 
         <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-20">
           <h2 className="mb-8 text-3xl font-bold md:text-5xl text-white lg:mb-14">
             Meet AI-Powered Protection
