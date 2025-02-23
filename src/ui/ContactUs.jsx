@@ -3,7 +3,7 @@ import React from 'react'
 const ContactUs = () => {
   return (
     <>
-		<section className='bg-linear-65 from-black to-purple-500 '>
+		<section className='bg-linear-65 from-black to-blue-500 '>
 		  <div className="mx-auto max-w-7xl px-5 py-16 text-center md:px-10 md:py-20">
 		    <h2 className="text-3xl font-bold md:text-5xl text-white">Contact Sales</h2>
 		    <p className="mx-auto mb-8 mt-4 max-w-lg text-white md:mb-12 lg:mb-16">
@@ -53,7 +53,7 @@ const ContactUs = () => {
 		        </span>
 		      </label>
 		
-		      <input type="submit" value="Join Cybersentinels" className="inline-block w-full rounded-md cursor-pointer bg-purple-500 px-6 py-3 text-center font-semibold text-white" />
+		      <input type="submit" value="Join Cybersentinels" className="inline-block w-full rounded-md cursor-pointer bg-blue-500 px-6 py-3 text-center font-semibold text-white" />
 		    </form>
 		  </div>
 		</section>

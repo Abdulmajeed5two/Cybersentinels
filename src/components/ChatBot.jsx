@@ -4,7 +4,6 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const genAI = new GoogleGenerativeAI("AIzaSyBm5zWFVNgqemqrZcU7VNgSLLrVALM0h9M");
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-
 const chatSession = model.startChat();
 
 const ChatBot = () => {
@@ -14,7 +13,7 @@ const ChatBot = () => {
   const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef(null);
 
-  const cleanResponse = (text) => text.replace(/\*\*/g, "").trim();
+  const formatResponse = (text) => text.replace(/\*\*/g, "").trim();
 
   const handleSendMessage = async () => {
     if (!message.trim()) return;
@@ -25,21 +24,13 @@ const ChatBot = () => {
 
     try {
       let botResponse = "Sorry, I couldn't process that.";
-
-      if (message.toLowerCase().includes("acuvision")) {
-        botResponse = "Acuvision is an AI-driven interview platform.";
-      } else {
-        const result = await chatSession.sendMessage(message);
-        botResponse = cleanResponse(result.response.text());
-      }
+      const result = await chatSession.sendMessage(message);
+      botResponse = formatResponse(result.response.text());
 
       setMessages((prev) => [...prev, { text: botResponse, sender: "bot" }]);
     } catch (error) {
       console.error("Error fetching AI response:", error);
-      setMessages((prev) => [
-        ...prev,
-        { text: "Sorry, something went wrong.", sender: "bot" },
-      ]);
+      setMessages((prev) => [...prev, { text: "Sorry, something went wrong.", sender: "bot" }]);
     }
     setIsTyping(false);
   };
@@ -55,11 +46,7 @@ const ChatBot = () => {
         onClick={() => setIsOpen(!isOpen)}
       >
         <div className="relative">
-          <div
-            className={`absolute inset-0 animate-ping bg-indigo-500/30 rounded-full ${
-              isOpen ? "animate-none" : ""
-            }`}
-          />
+          <div className={`absolute inset-0 animate-ping bg-indigo-500/30 rounded-full ${isOpen ? "animate-none" : ""}`} />
           <div className="p-4 rounded-full shadow-lg bg-[#f0f2ff]">
             <img src="/logo/logo.png" alt="Chat" className="h-10 w-10" />
           </div>
@@ -70,45 +57,25 @@ const ChatBot = () => {
           isOpen ? "opacity-100 scale-100" : "opacity-0 scale-90 pointer-events-none"
         }`}
       >
-        <div
-          className={`bg-white rounded-2xl shadow-2xl w-[450px] h-[550px] flex flex-col transition-transform duration-300 ${
-            isOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
-          }`}
-        >
+        <div className={`bg-white rounded-2xl shadow-2xl w-[450px] h-[550px] flex flex-col transition-transform duration-300 ${isOpen ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"}`}>
           <div className="bg-[#f0f2ff] p-4 rounded-t-2xl flex items-center justify-between shadow-md">
             <div className="flex items-center space-x-3">
               <img src="/logo/logo.png" alt="Logo" className="h-8 w-8" />
               <h2 className="text-black font-semibold text-lg">CYB Assistant</h2>
             </div>
-            <button
-              className="text-gray-600 hover:text-red-500 transition-all duration-200"
-              onClick={() => setIsOpen(false)}
-            >
+            <button className="text-gray-600 hover:text-red-500 transition-all duration-200" onClick={() => setIsOpen(false)}>
               <XCircle size={24} />
             </button>
           </div>
           <div className="flex-1 overflow-hidden p-4 space-y-3">
             <div className="overflow-y-auto h-full pr-2 scrollbar-none">
               {messages.map((msg, index) => (
-                <div
-                  key={index}
-                  className={`flex ${
-                    msg.sender === "user" ? "justify-end" : "justify-start"
-                  } transition-opacity duration-300 animate-fade-in`}
-                >
-                  <div
-                    className={`max-w-[70%] rounded-lg p-3 shadow-md ${
-                      msg.sender === "user"
-                        ? "bg-indigo-500 text-white"
-                        : "bg-gray-100 text-gray-800"
-                    }`}
-                  >
+                <div key={index} className={`flex ${msg.sender === "user" ? "justify-end" : "justify-start"} transition-opacity duration-300 animate-fade-in`}>
+                  <div className={`max-w-[70%] rounded-lg p-3 shadow-md ${msg.sender === "user" ? "bg-indigo-500 text-white" : "bg-gray-100 text-gray-800"}`}>
                     {msg.text}
                   </div>
                 </div>
               ))}
-
-              {/* Typing Indicator */}
               {isTyping && (
                 <div className="flex justify-start">
                   <div className="max-w-[70%] rounded-lg p-3 bg-gray-100 text-gray-800 shadow-md flex items-center space-x-2">
@@ -120,8 +87,6 @@ const ChatBot = () => {
               <div ref={messagesEndRef}></div>
             </div>
           </div>
-
-          {/* Input Box */}
           <div className="p-4 border-t bg-gray-50 rounded-b-2xl">
             <div className="flex space-x-2">
               <input
@@ -132,10 +97,7 @@ const ChatBot = () => {
                 placeholder="Type your message..."
                 className="flex-1 border rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-sm"
               />
-              <button
-                onClick={handleSendMessage}
-                className="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 transition-all duration-200 shadow-md"
-              >
+              <button onClick={handleSendMessage} className="bg-indigo-500 text-white px-4 py-2 rounded-lg hover:bg-indigo-600 transition-all duration-200 shadow-md">
                 Send
               </button>
             </div>

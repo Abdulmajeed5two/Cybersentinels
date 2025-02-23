@@ -36,7 +36,7 @@ const HeroSec = () => {
           content removal.
 		        </p>
 		      </div>
-		      <img src="/img/brain.jpg" alt="" className="relative -bottom-6 -right-6 mt-20 w-[480px] object-cover md:absolute md:mt-0 md:h-[480px] c-h-480px" />
+		      <img src="/img/back.jpg" alt="" className="relative -bottom-6 -right-6 mt-20 w-[480px] object-cover md:absolute md:mt-0 md:h-[480px] c-h-480px" />
 		    </div>
 		  </div>
 		</header>
