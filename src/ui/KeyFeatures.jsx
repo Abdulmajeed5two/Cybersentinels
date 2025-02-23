@@ -1,6 +1,16 @@
 import React from 'react';
+import { ShieldCheck, EyeOff, Search, CameraOff, Trash2, Lock, Clock } from 'lucide-react';
 
 const KeyFeatures = () => {
+  const features = [
+    { title: "Fraud Detection", desc: "AI-powered fraud detection to keep you safe.", icon: <Search size={32} /> },
+    { title: "Deepfake Detection", desc: "Detects deepfakes instantly with fast processing.", icon: <CameraOff size={32} /> },
+    { title: "Screenshot Prevention", desc: "Block unauthorized screenshots and screen recording.", icon: <EyeOff size={32} /> },
+    { title: "Social Media Cleanup", desc: "Easily remove harmful online content.", icon: <Trash2 size={32} /> },
+    { title: "Data Encryption", desc: "End-to-end encryption for your privacy.", icon: <Lock size={32} /> },
+    { title: "24/7 Monitoring", desc: "Stay protected with real-time AI monitoring.", icon: <Clock size={32} /> }
+  ];
+
   return (
     <section 
       className="relative w-full h-screen bg-cover bg-center" 
@@ -17,15 +27,8 @@ const KeyFeatures = () => {
             />
           </div>
           <ul className="grid max-w-2xl grid-cols-2 sm:gap-5 md:max-w-none">
-            {[
-              { title: "Fraud Detection", desc: "AI-powered fraud detection to keep you safe.", icon: "🔍" },
-              { title: "deepfake detection", desc: "Detects deepfakes instantly with fast processing.", icon: "📷" },
-              { title: "Screenshot Prevention", desc: "Block unauthorized screenshots and screen recording.", icon: "🚫" },
-              { title: "Social Media Cleanup", desc: "Easily remove harmful online content.", icon: "🛡️" },
-              { title: "Data Encryption", desc: "End-to-end encryption for your privacy.", icon: "🔒" },
-              { title: "24/7 Monitoring", desc: "Stay protected with real-time AI monitoring.", icon: "⏳" }
-            ].map((feature, index) => (
-              <li key={index} className=" text-black flex flex-col p-5 bg-white bg-opacity-10 rounded-lg backdrop-blur-md">
+            {features.map((feature, index) => (
+              <li key={index} className="text-black flex flex-col p-5 bg-white bg-opacity-10 rounded-lg backdrop-blur-md">
                 <span className="text-3xl mb-4">{feature.icon}</span>
                 <p className="mb-4 font-semibold text-lg">{feature.title}</p>
                 <p className="text-sm text-black">{feature.desc}</p>
